@@ -14,43 +14,49 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="calculator-body">
+    <h1>A GIANT WEB CALCULATOR</h1>
+    <main class="calculator-shadow">
+    <div class="calculator-body">
       <div class="results-input">
         <input
           type="text"
-          id="calculator-output"
-          name="calculator-output"
+          id="calculator-output" class="display"
+          name="calculator-output"value=''
           readonly
         />
-        <input type="number" id="calculator-input" name="calculator-input" />
+        <input type="number" id="calculator-input"
+        class= "display"
+        name="calculator-input" />
       </div>
-      <button id="one" class="function-button button"></button>
+      <button id="reset-button" type="reset" class="function-button button">AC</button>
       <button class="number-button button" id="one-btn">1</button>
       <button class="number-button button" id="two-btn">2</button>
       <button class="number-button button" id="three-btn">3</button>
+      <button id="delete-button" class="function-button button">Del</button>
       <button class="number-button button" id="four-btn">4</button>
       <button class="number-button button" id="five-btn">5</button>
       <button class="number-button button" id="six-btn">6</button>
+      <button class="number-button button" id="point-btn">.</button>
       <button class="number-button button" id="seven-btn">7</button>
       <button class="number-button button" id="eight-btn">8</button>
       <button class="number-button button" id="nine-btn">9</button>
-      <button class="number-button button" id="zero-btn">0</button>
-      <button class="number-button button" id="point-btn">.</button>
       <button id="plus-button" class="function-button button">
         <i class="fas fa-plus"></i>
-      </button>
-      <button id="minus-button" class="function-button button">
-        <i class="fas fa-minus"></i>
+      </button> 
+      <button id="minus-button" class="function-button button"> <i class="fas fa-minus"></i></button>
+      <button class="number-button button" id="zero-btn">0</button>
+      <button id="transform-button" class= "function-button button">Sci</button>
+      <button id="divide-button" class="function-button button">
+        <i class="fas fa-divide"></i>
       </button>
       <button id="multiply-button" class="function-button button">
         <i class="fas fa-times"></i>
       </button>
-      <button id="divide-button" class="function-button button">
-        <i class="fas fa-divide"></i>
-      </button>
       <button id="equals-button" class="function-button button">
         <i class="fas fa-equals"></i>
       </button>
+      <button id="delete-button" class="function-button button">X.X</button>
+    </div>
     </main>
   </body>
 </html>
