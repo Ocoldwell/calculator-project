@@ -29,6 +29,7 @@ body {
 body .calculator-body {
   height: 700px;
   width: 450px;
+  position: relative;
   display: grid;
   margin: 20px;
   padding: 20px;
@@ -69,20 +70,37 @@ body .calculator-body .results-input .display {
   z-index: 0;
 }
 
-button {
+.button {
   display: inline-block;
+  position: relative;
   border: 1px #30dbfc solid;
   border-radius: 20px;
   text-decoration: none;
-  background: #FC5130;
-  color: #FFFAFF;
+  background: #fc5130;
+  color: #fffaff;
   cursor: pointer;
   margin: 5px;
   padding: 5px;
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
-  filter: drop-shadow(2px 4px rgba(252, 81, 48, 0.4));
+}
+
+.button::before {
+  background: -moz-linear-gradient(45deg, #2a2c3a 0%, rgba(67, 67, 85, 0.7) 80%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #2a2c3a 0%, rgba(67, 67, 85, 0.7) 80%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #2a2c3a 0%, rgba(67, 67, 85, 0.7) 80%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  top: -6px;
+  bottom: -10px;
+  z-index: -1;
+  border-radius: 20px;
 }
 
 /* Chrome, Safari, Edge, Opera */
