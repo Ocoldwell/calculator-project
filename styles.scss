@@ -1,5 +1,6 @@
-$button-color: #fc5130;
+$button-color:linear-gradient(40deg, rgba(252,81,48,1) 0%, rgba(230,136,93,1) 64%, rgba(252,81,48,1) 100%);
 $button-border-color: #30dbfc;
+$display-color:black;
 $font-color: #303036;
 $button-font-color: #fffaff;
 $font-size: 36px;
@@ -56,41 +57,56 @@ body {
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=1 );
   .calculator-body {
-    height: 700px;
-    width: 450px;
+    height: 80%;
+    width: 90%;
     position: relative;
-    display: grid;
     margin: 20px;
     padding: 20px;
     border: 2px solid black;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: $font-color;
     border-radius: 50px;
     z-index: 200;
+    box-shadow:   1px 1px 0px rgb(15, 14, 14),
+                  2px 2px 0px rgb(15, 14, 14),                 
+                  3px 3px 0px rgb(15, 14, 14),
+                  4px 4px 0px rgb(15, 14, 14),
+                  5px 5px 0px rgb(15, 14, 14),
+                  6px 6px 0px rgb(15, 14, 14);
+  }
+    .calculator-buttons {
+    margin: auto;
+    width: 100%;
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    background-color: $font-color;
+    border-radius: 50px;
+    z-index: 200;
+    }
     .results-input {
       grid-column-start: 1;
       grid-column-end: 5;
-      margin: 10px;
       .display {
         width: 100%;
         height: 100px;
-        background-color: black;
+        background:$display-color;
         border: 2px solid $font-color;
-        color: white;
+        color: $button-font-color;
         border-radius: 10px;
-        text-align: center;
+        text-align: right;
         padding: 10px;
         font-family: "The Led Display St";
       }
     }
   }
-}
 
 .calculator-shadow {
-  height: 750px;
-  width: 500px;
+  height: 70%;
+  width: 70%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid black;
   filter: drop-shadow(20px 10px 4px $font-color);
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -98,6 +114,12 @@ body {
   background-color: $font-color;
   border-radius: 50px;
   z-index: 0;
+ box-shadow: 1px 1px 0px rgb(15, 14, 14),
+  2px 2px 0px rgb(15, 14, 14),                 
+  3px 3px 0px rgb(15, 14, 14),
+  4px 4px 0px rgb(15, 14, 14),
+  5px 5px 0px rgb(15, 14, 14),
+  6px 6px 0px rgb(15, 14, 14);
 }
 
 .button {
@@ -115,6 +137,11 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   // filter: drop-shadow(2px 4px rgba(252, 81, 48, 0.4));
+
+}
+#equals-button {
+  grid-column-start: 3;
+  grid-column-end: 5;
 
 }
 

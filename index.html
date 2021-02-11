@@ -4,59 +4,188 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,600&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
     <title>Calculator</title>
     <script
       src="https://kit.fontawesome.com/802fa2c4b9.js"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js" async defer></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- <h1>A GIANT WEB CALCULATOR</h1> -->
     <main class="calculator-shadow">
-    <div class="calculator-body">
-      <div class="results-input">
-        <input
-          type="text"
-          id="calculator-output" class="display"
-          name="calculator-output"value=''
-          readonly
-        />
-        <input type="number" id="calculator-input"
-        class= "display"
-        name="calculator-input" />
+      <div class="calculator-body">
+        <div class="results-input">
+          <input
+            type="text"
+            id="calculator-output"
+            class="display"
+            name="calculator-output"
+            value=""
+            disabled
+          />
+          <input
+            type="number"
+            id="calculator-input"
+            class="display"
+            name="calculator-input"
+          />
+        </div>
+        <div class="calculator-buttons">
+          <button id="reset-button" type="reset" class="clear-button button">
+            AC
+          </button>
+          <button
+            class="number-button button"
+            id="one-btn"
+            type="button"
+            value="1"
+          >
+            1
+          </button>
+          <button
+            class="number-button button"
+            id="two-btn"
+            type="button"
+            value="2"
+          >
+            2
+          </button>
+          <button
+            class="number-button button"
+            id="three-btn"
+            type="button"
+            value="3"
+          >
+            3
+          </button>
+          <button
+            id="delete-button"
+            class="clear-button button"
+            type="button"
+            value="delete"
+          >
+            Del
+          </button>
+          <button
+            class="number-button button"
+            id="four-btn"
+            type="button"
+            value="4"
+          >
+            4
+          </button>
+          <button
+            class="number-button button"
+            id="five-btn"
+            type="button"
+            value="5"
+          >
+            5
+          </button>
+          <button
+            class="number-button button"
+            id="six-btn"
+            type="button"
+            value="6"
+          >
+            6
+          </button>
+          <button
+            class="decimal button"
+            id="decimal-point"
+            type="button"
+            value="."
+          >
+            .
+          </button>
+          <button
+            class="number-button button"
+            id="seven-btn"
+            type="button"
+            value="7"
+          >
+            7
+          </button>
+          <button
+            class="number-button button"
+            id="eight-btn"
+            type="button"
+            value="8"
+          >
+            8
+          </button>
+          <button
+            class="number-button button"
+            id="nine-btn"
+            type="button"
+            value="9"
+          >
+            9
+          </button>
+          <button
+            id="plus-button"
+            class="function-button button"
+            type="button"
+            value="+"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
+          <button
+            id="minus-button"
+            class="function-button button"
+            type="button"
+            value="-"
+          >
+            <i class="fas fa-minus"></i>
+          </button>
+          <button
+            class="number-button button"
+            id="zero-btn"
+            type="button"
+            value="0"
+          >
+            0
+          </button>
+          <button
+            id="transform-button"
+            class="function-button button"
+            type="button"
+          >
+            Sci
+          </button>
+          <button
+            id="divide-button"
+            class="function-button button"
+            type="button"
+            value="/"
+          >
+            <i class="fas fa-divide"></i>
+          </button>
+          <button
+            id="multiply-button"
+            class="function-button button"
+            type="button"
+            value="*"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          <button
+            id="equals-button"
+            class="function-button button"
+            type="button"
+            value="="
+          >
+            <i class="fas fa-equals"></i>
+          </button>
+        </div>
       </div>
-      <button id="reset-button" type="reset" class="function-button button">AC</button>
-      <button class="number-button button" id="one-btn">1</button>
-      <button class="number-button button" id="two-btn">2</button>
-      <button class="number-button button" id="three-btn">3</button>
-      <button id="delete-button" class="function-button button">Del</button>
-      <button class="number-button button" id="four-btn">4</button>
-      <button class="number-button button" id="five-btn">5</button>
-      <button class="number-button button" id="six-btn">6</button>
-      <button class="number-button button" id="point-btn">.</button>
-      <button class="number-button button" id="seven-btn">7</button>
-      <button class="number-button button" id="eight-btn">8</button>
-      <button class="number-button button" id="nine-btn">9</button>
-      <button id="plus-button" class="function-button button">
-        <i class="fas fa-plus"></i>
-      </button> 
-      <button id="minus-button" class="function-button button"> <i class="fas fa-minus"></i></button>
-      <button class="number-button button" id="zero-btn">0</button>
-      <button id="transform-button" class= "function-button button">Sci</button>
-      <button id="divide-button" class="function-button button">
-        <i class="fas fa-divide"></i>
-      </button>
-      <button id="multiply-button" class="function-button button">
-        <i class="fas fa-times"></i>
-      </button>
-      <button id="equals-button" class="function-button button">
-        <i class="fas fa-equals"></i>
-      </button>
-      <button id="party" class="function-button button">P</button>
-    </div>
-    </main> 
+    </main>
   </body>
 </html>
