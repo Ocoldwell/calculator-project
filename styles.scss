@@ -158,33 +158,35 @@ body {
   z-index: -1;
   border-radius: 20px;
 }
-
-// h1 {
-//   font-family: 'The Led Display St';
-//   font-size: 144px;
-//   position: absolute;
-//   height: 100vh;
-//   width: 100vw;
-//   z-index: 2000;
-//   text-align: center;
-//   background: red;
-// background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
-// background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
-// background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
-// background: $rainbow;
-// -webkit-background-clip: text;
-// -webkit-text-fill-color: transparent;
-// animation-duration: 10s;
-// animation-fill-mode: forwards;
-// animation-iteration-count: infinite;
-// animation-name: rainbowShimmer;
-// animation-timing-function: linear;
-// -webkit-backface-visibility: hidden;
-//   left:0;
-//   right:0;
-//   top:0;
-//   bottom:0;
-// }
+ .hidden {
+  display: none;
+ }
+h1 {
+  font-family: 'The Led Display St';
+  font-size: 144px;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2000;
+  text-align: center;
+  background: red;
+background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+background: $rainbow;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation-duration: 10s;
+animation-fill-mode: forwards;
+animation-iteration-count: infinite;
+animation-name: rainbowShimmer;
+animation-timing-function: linear;
+-webkit-backface-visibility: hidden;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -196,11 +198,11 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-// @keyframes rainbowShimmer {
-//   0% {
-//     background-position: 0px 0;
-//   }
-//   100% {
-//     background-position: 100em 0;
-//   }
-// }
+@keyframes rainbowShimmer {
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 100em 0;
+  }
+}
