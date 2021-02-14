@@ -1,0 +1,105 @@
+//Additional hidden styles.
+.hidden {
+  display: none;
+}
+h1 {
+  font-family: "The Led Display St";
+  font-size: 144px;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2000;
+  text-align: center;
+  background: red;
+  background: -webkit-linear-gradient(
+    left,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background: -o-linear-gradient(
+    right,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background: -moz-linear-gradient(
+    right,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background: $rainbow;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: rainbowShimmer;
+  animation-timing-function: linear;
+  -webkit-backface-visibility: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+//Removes arrows on input boxes with number as type.
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+//Hidden animation.
+@keyframes rainbowShimmer {
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 100em 0;
+  }
+}
+
+//button animation
+@keyframes gradient {
+  0% {
+    background: radial-gradient(circle at center, rgba( 255, 125 , 125, 0 ) 0%, #fff 0%, #fff 100%);
+  }
+  25% {
+    background: radial-gradient(circle at center, rgba( 255, 125, 125, 0.3 ) 24%, #fff 25%, #fff 100%);
+  }
+  50% {
+    background: radial-gradient(circle at center, rgba( 255, 125, 125, 0.5 ) 49%, #fff 50%, #fff 100%);
+  }
+  75% {
+    background: radial-gradient(circle at center,#f0a161 74%, #fff 75%, #fff 100%);
+  }
+  100% {
+    color: #fff;
+    background: radial-gradient(circle at center, $button-font-color 99%, #fff 100%, #fff 100%);
+  }
+}
+
+button:active {
+  /* set time duration to your needs */
+  animation: gradient 200ms;
+  background: $button-font-color;
+  color: $button-color;
+  box-shadow: none;
+}
