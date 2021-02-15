@@ -18,6 +18,11 @@ const inputNumber = (number) => {
 };
 //How decimals are handled by checking if the calculator object already includes a decimal.
 const inputDecimal = (dec) => {
+  if (calculator.waitingForSecondNumber === true) {
+    calculator.displayValue = '0.'
+    calculator.waitingForSecondNumber = false;
+    return;
+  }
   if (!calculator.displayValue.includes(dec)) {
     calculator.displayVariable += dec;
   }
@@ -26,11 +31,15 @@ const inputDecimal = (dec) => {
 const handleOperator = (operatorUpdate) => {
   const { firstNumber, displayValue, operator } = calculator;
   const inputValue = parseFloat(displayValue);
+  if (operator && calculator.waitingForSecondNumber) {
+    calculator.operator = nextOperator;
+    console.log(calculator)
+  }
   if (firstNumber === null && !isNaN(inputValue)) {
     calculator.firstNumber = inputValue;
   } else if (operator) {
     const result = calculate(firstNumber, inputValue, operator);
-    calculator.displayValue = String(result);
+    calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
     calculator.firstNumber = result;
   }
 //Boolean state that allows for more than one number + stores operator in object.
@@ -66,31 +75,32 @@ const displayUpdate = () => {
 displayUpdate();
 //Refers to parent element of all buttons on calculator.
 const keys = document.querySelector(".calculator-buttons");
-//Selector of function to run based on classes of buttons.
+//Selector of function to run based on values of buttons.
 keys.addEventListener("click", (event) => {
   const { target } = event;
+  const { value } = target;
   if (!target.matches("button")) {  
     return;
   }
-  if (target.classList.contains("function-button")) {
-    handleOperator(target.value);
-    displayUpdate();
-    return;
+  switch (value) {
+    case '+':
+    case '-':
+    case '*':
+    case '/':
+    case '=':
+      handleOperator(value);
+      break;
+    case '.':
+      inputDecimal(value);
+      break;
+    case 'all-clear':
+      reset();
+      break;
+    default:
+      if (Number.isInteger(parseFloat(value))) {
+        inputNumber(value);
+      }
   }
-
-  if (target.classList.contains("decimal")) {
-    inputDecimal(target.value);
-    displayUpdate();
-    return;
-  }
-
-  if (target.classList.contains("clear-button")) {
-    reset();
-    displayUpdate();
-    return;
-  }
-
-  inputNumber(target.value);
   displayUpdate();
 });
 

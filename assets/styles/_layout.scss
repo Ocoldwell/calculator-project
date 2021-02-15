@@ -64,7 +64,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   background-color: $font-color;
@@ -97,4 +96,9 @@ body {
 #equals-button {
   grid-column-start: 3;
   grid-column-end: 5;
+}
+
+#reset-button {
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
