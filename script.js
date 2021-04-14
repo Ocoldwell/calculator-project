@@ -111,23 +111,3 @@ let keyHandler = function (event) {
 }
 
 document.addEventListener('keydown', keyHandler, false);
-
-
-//Make a calculator
-// Needs to update and display number as typed or button pressed. yes on button press
-//Needs to track key inputs and button presses with correct values. yes on button press
-//Validation. yes on button
-//updates and displays input on output screen. input is shown on input screen. > needs fix?
-//Should show the equation as inputted. no.
-
-//Needs to store number and additional numbers append to it rather than perform an operation. yes done
-//Make variables that tracks inputs. yes using calculator object.
-//functions required that track inputs onclick and typed. yes onclick events tracked.
-
-//apply an operator. operator added to display but no function to calculate.
-//operator needs to be stored and displayed. operator is stored and displayed, potentially move store
-//store second number. no
-
-
-//extra functionality = party? style changes.
-//extra functionality = scientific mode. add additional functions, modify style
