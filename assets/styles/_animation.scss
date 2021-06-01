@@ -92,14 +92,14 @@ input[type="number"] {
   }
   100% {
     color: #fff;
-    background: radial-gradient(circle at center, $button-font-color 99%, #fff 100%, #fff 100%);
+    background: radial-gradient(circle at center, $button-border-color 99%, #fff 100%, #fff 100%);
   }
 }
 
 button:active {
   /* set time duration to your needs */
   animation: gradient 200ms;
-  background: $button-font-color;
+  background: $button-border-color;
   color: $button-color;
   box-shadow: none;
 }
