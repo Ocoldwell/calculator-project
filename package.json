@@ -1,7 +1,6 @@
 {
   "name": "calculator-project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "e2e": "cypress open",
@@ -18,6 +17,7 @@
   },
   "homepage": "https://github.com/Ocoldwell/calculator-project#readme",
   "devDependencies": {
-    "cypress": "^6.5.0"
-  }
+    "cypress": "^6.9.1"
+  },
+  "description": ""
 }

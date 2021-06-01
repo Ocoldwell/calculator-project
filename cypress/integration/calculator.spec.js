@@ -8,8 +8,7 @@ it ('Should check 5+2 equals 7', () => {
   cy.get('#equals-button').click();
    // 3. Assert - How can we improve this?
    //    https://docs.cypress.io/api/commands/should.html#Yields
-  cy.get('#calculator-output').should('contain', '')
-  cy.get('#calculator-output').should('contain', 7)
+  cy.get('#calculator-output').invoke('val').should('contain', '7')
 });
 
 it('should check 5 -4 equals 1', () =>{
@@ -20,7 +19,7 @@ it('should check 5 -4 equals 1', () =>{
   cy.get('#four-btn').click();
   cy.get('#equals-button').click();
 
-  cy.get('#calculator-output').should('contain', '1')
+  cy.get('#calculator-output').invoke('val').should('contain', '1')
 });
 
 it('should check 3 multiplied by 6 equals 18', () => {
@@ -31,9 +30,8 @@ it('should check 3 multiplied by 6 equals 18', () => {
   cy.get('#six-btn').click();
   cy.get('#equals-button').click();
 
-  cy.get('#calculator-output').should('contain', '18')
+  cy.get('#calculator-output').invoke('val').should('contain', '18');
 })
-
 it ('should check 20 divided by 5 equals 4', () => {
   cy.visit('http://127.0.0.1:5500')
 
@@ -43,5 +41,5 @@ it ('should check 20 divided by 5 equals 4', () => {
   cy.get('#five-btn').click();
   cy.get('#equals-button').click();
 
-  cy.get('#calculator-output').should('contain', '4')
+  cy.get('#calculator-output').invoke('val').should('contain', '4')
 })
