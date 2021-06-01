@@ -30,7 +30,7 @@ body .calculator-body {
   background-color: #AA3939;
   border-radius: 50px;
   z-index: 200;
-  box-shadow: 1px 1px 0px #550000, 2px 2px 0px #550000, 3px 3px 0px #550000, 4px 4px 0px #550000, 5px 5px 0px #550000, 6px 6px 0px #550000;
+  box-shadow: 1px 1px 0 #550000, 2px 2px 0 #550000, 3px 3px 0 #550000, 4px 4px 0 #550000, 5px 5px 0 #550000, 6px 6px 0 #550000;
 }
 body .calculator-buttons {
   position: inherit;
@@ -71,7 +71,7 @@ body .results-input .display {
   background-color: #AA3939;
   border-radius: 50px;
   z-index: 0;
-  box-shadow: 1px 1px 0px #550000, 2px 2px 0px #550000, 3px 3px 0px #550000, 4px 4px 0px #550000, 5px 5px 0px #550000, 6px 6px 0px #550000;
+  box-shadow: 1px 1px 0 #550000, 2px 2px 0 #550000, 3px 3px 0 #550000, 4px 4px 0 #550000, 5px 5px 0 #550000, 6px 6px 0 #550000;
 }
 
 .button {
@@ -149,7 +149,7 @@ input[type=number] {
 
 @keyframes rainbowShimmer {
   0% {
-    background-position: 0px 0;
+    background-position: 0 0;
   }
   100% {
     background-position: 100em 0;
