@@ -11,20 +11,19 @@ const inputNumber = (number) => {
     calculator.displayValue = number;
     calculator.waitingForSecondNumber = false;
   } else {
-    calculator.displayValue =
-      displayValue === "0" ? number : displayValue + number;
+    calculator.displayValue = displayValue === "0" ? number : displayValue + number;
   }
   console.log(calculator);
 };
 //How decimals are handled by checking if the calculator object already includes a decimal.
 const inputDecimal = (dec) => {
   if (calculator.waitingForSecondNumber === true) {
-    calculator.displayValue = '0.'
+    calculator.displayValue = "0.";
     calculator.waitingForSecondNumber = false;
     return;
   }
   if (!calculator.displayValue.includes(dec)) {
-    calculator.displayVariable += dec;
+    calculator.displayValue += dec;
   }
 };
 //Object deconstruction that allows for detection and how to manipulate object when encountered.
@@ -33,7 +32,7 @@ const handleOperator = (operatorUpdate) => {
   const inputValue = parseFloat(displayValue);
   if (operator && calculator.waitingForSecondNumber) {
     calculator.operator = nextOperator;
-    console.log(calculator)
+    console.log(calculator);
   }
   if (firstNumber === null && !isNaN(inputValue)) {
     calculator.firstNumber = inputValue;
@@ -42,7 +41,7 @@ const handleOperator = (operatorUpdate) => {
     calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
     calculator.firstNumber = result;
   }
-//Boolean state that allows for more than one number + stores operator in object.
+  //Boolean state that allows for more than one number + stores operator in object.
   calculator.waitingForSecondNumber = true;
   calculator.operator = operatorUpdate;
   console.log(calculator);
@@ -66,7 +65,7 @@ const reset = () => {
   calculator.firstNumber = null;
   calculator.waitingForSecondNumber = false;
   calculator.operator = null;
-}
+};
 //Allows for object value to be displayed on calculator screen.
 const displayUpdate = () => {
   const display = document.getElementById("calculator-output");
@@ -79,21 +78,21 @@ const keys = document.querySelector(".calculator-buttons");
 keys.addEventListener("click", (event) => {
   const { target } = event;
   const { value } = target;
-  if (!target.matches("button")) {  
+  if (!target.matches("button")) {
     return;
   }
   switch (value) {
-    case '+':
-    case '-':
-    case '*':
-    case '/':
-    case '=':
+    case "+":
+    case "-":
+    case "*":
+    case "/":
+    case "=":
       handleOperator(value);
       break;
-    case '.':
+    case ".":
       inputDecimal(value);
       break;
-    case 'all-clear':
+    case "all-clear":
       reset();
       break;
     default:
@@ -105,39 +104,30 @@ keys.addEventListener("click", (event) => {
 });
 
 //Konami Code implementation.
-const pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowLeft', 'ArrowRight', 'ArrowRight', 'b', 'a'];
+const pattern = [
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowRight",
+  "b",
+  "a",
+];
 let current = 0;
 
 let keyHandler = function (event) {
-  if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]){
+  if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
     current = 0;
     return;
   }
-  current ++;
+  current++;
   if (pattern.length === current) {
     current = 0;
     document.querySelector(".hidden").classList.remove("hidden");
   }
-}
+};
 
-document.addEventListener('keydown', keyHandler, false);
-
-
-//Make a calculator
-// Needs to update and display number as typed or button pressed. yes on button press
-//Needs to track key inputs and button presses with correct values. yes on button press
-//Validation. yes on button
-//updates and displays input on output screen. input is shown on input screen. > needs fix?
-//Should show the equation as inputted. no.
-
-//Needs to store number and additional numbers append to it rather than perform an operation. yes done
-//Make variables that tracks inputs. yes using calculator object.
-//functions required that track inputs onclick and typed. yes onclick events tracked.
-
-//apply an operator. operator added to display but no function to calculate.
-//operator needs to be stored and displayed. operator is stored and displayed, potentially move store
-//store second number. no
-
-
-//extra functionality = party? style changes.
-//extra functionality = scientific mode. add additional functions, modify style.
+document.addEventListener("keydown", keyHandler, false);

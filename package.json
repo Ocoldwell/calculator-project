@@ -1,0 +1,23 @@
+{
+  "name": "calculator-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "e2e": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ocoldwell/calculator-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ocoldwell/calculator-project/issues"
+  },
+  "homepage": "https://github.com/Ocoldwell/calculator-project#readme",
+  "devDependencies": {
+    "cypress": "^6.5.0"
+  }
+}

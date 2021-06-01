@@ -100,6 +100,10 @@ body .results-input .display {
   grid-row-end: 3;
 }
 
+button > * {
+  pointer-events: none;
+}
+
 .hidden {
   display: none;
 }

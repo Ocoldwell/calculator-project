@@ -22,12 +22,12 @@ body {
     border-radius: 50px;
     z-index: 200;
     box-shadow: 
-      1px 1px 0px $display-color,
-      2px 2px 0px $display-color,
-      3px 3px 0px $display-color,
-      4px 4px 0px $display-color,
-      5px 5px 0px $display-color,
-      6px 6px 0px $display-color;
+      1px 1px 0 $display-color,
+      2px 2px 0 $display-color,
+      3px 3px 0 $display-color,
+      4px 4px 0 $display-color,
+      5px 5px 0 $display-color,
+      6px 6px 0 $display-color;
   }
   .calculator-buttons {
     position: inherit;
@@ -70,12 +70,12 @@ body {
   border-radius: 50px;
   z-index: 0;
   box-shadow: 
-  1px 1px 0px $display-color,
-  2px 2px 0px $display-color,
-  3px 3px 0px $display-color,
-  4px 4px 0px $display-color,
-  5px 5px 0px $display-color,
-  6px 6px 0px $display-color;
+  1px 1px 0 $display-color,
+  2px 2px 0 $display-color,
+  3px 3px 0 $display-color,
+  4px 4px 0 $display-color,
+  5px 5px 0 $display-color,
+  6px 6px 0 $display-color;
 }
 .button {
   display: inline-block;
@@ -91,7 +91,6 @@ body {
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
-  // filter: drop-shadow(2px 4px rgba(252, 81, 48, 0.4));
 }
 #equals-button {
   grid-column-start: 3;
@@ -101,4 +100,8 @@ body {
 #reset-button {
   grid-row-start: 1;
   grid-row-end: 3;
+}
+
+button > * {
+  pointer-events: none;
 }
