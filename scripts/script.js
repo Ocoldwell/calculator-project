@@ -11,7 +11,8 @@ const inputNumber = (number) => {
     calculator.displayValue = number;
     calculator.waitingForSecondNumber = false;
   } else {
-    calculator.displayValue = displayValue === "0" ? number : displayValue + number;
+    calculator.displayValue =
+      displayValue === "0" ? number : displayValue + number;
   }
   console.log(calculator);
 };

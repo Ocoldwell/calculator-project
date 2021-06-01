@@ -9,7 +9,7 @@
   * {
     font-size: $mobile-fontsize;
   }
-  .button{
+  .button {
     height: 40px;
   }
 }
@@ -81,12 +81,12 @@ body {
   background: $function-button-color;
 }
 .clear-button {
-  background: #795AF5;
+  background: #795af5;
 }
 #equals-button {
   grid-column-start: 3;
   grid-column-end: 5;
-  background: #795AF5;
+  background: #795af5;
 }
 
 #reset-button {
